@@ -2,14 +2,17 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     font-family: 'Lato', sans-serif;
 }
 
 img {
-    max-width: 100%;
-    height: auto;
+    margin: auto;
 }
 
 .header {
@@ -22,6 +25,7 @@ img {
     margin: 0;
 }
 
+.search_person-link,
 .navigation-link {
     text-decoration: none;
     text-transform: uppercase;
@@ -34,11 +38,20 @@ img {
     letter-spacing: 0.5px;
 }
 
+.hide {
+    display: none;
+}
+
+.show {
+    display: flex;
+}
+
 button {
     cursor: pointer;
 }
 
 .button {
+    position: relative;
     padding: 10px 20px;
     background: #4592FF;
     border-radius: 20px;
@@ -66,11 +79,17 @@ button {
 
 .button-icon:last-child {
     margin-right: 0;
-
 }
 
 .cart-count {
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
     margin-left: 10px;
+    background-color: rgb(235, 86, 27);
+    padding: 5px 10px;
+    border-radius: 50%;
+    color: #fff;
 }
 
 .show-goods .slider,
@@ -264,6 +283,18 @@ button {
     top: 18px;
 }
 
+.block-img {
+    height: 180px;
+
+
+}
+
+.goods-img {
+    display: flex;
+    max-height: 100%;
+    max-width: 100%;
+}
+
 .goods-title {
     margin-top: 15px;
     margin-bottom: 5px;
@@ -369,12 +400,15 @@ button {
 }
 
 .modal {
-    background-color: #e0e0ff;
-    min-width: 600px;
-    max-height: 400px;
-    padding: 30px;
-    overflow: auto;
     position: relative;
+
+    max-width: 600px;
+    height: auto;
+    margin: 50px auto;
+    padding: 30px;
+
+    background-color: #e0e0ff;
+    overflow: auto;
 }
 
 .modal-header {
@@ -385,6 +419,14 @@ button {
 .modal-title {
     margin-top: 0;
     margin-bottom: 15px;
+}
+
+.modal-text {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
 }
 
 .modal-close {
@@ -517,6 +559,34 @@ button {
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+}
+
+.persons__cell {
+    padding: 10px 0;
+}
+
+.persons-name__cell {
+    width: 350px;
+}
+
+.persons-pos__cell {
+    width: 400px;
+}
+
+.persons-dept__cell {
+    width: 200px;
+}
+
+.persons-eml__cell {
+    width: 150px;
+}
+
+.persons-phone__cell {
+    width: 100px;
+}
+
+.persons-mob__cell {
+    width: 100px;
 }
 
 
