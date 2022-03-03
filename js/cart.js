@@ -6,6 +6,7 @@ const cart = () => {
         modalCart = document.getElementById('modal-cart'),
         modalCloseBtn = document.querySelector('.modal-close'),
         parentDiv = document.querySelector('.long-goods-list'),
+        parentNew = document.querySelector('.short-goods'),
         cartTable = document.querySelector('.cart-table'),
         cartGoods = document.querySelector('.cart-table__goods'),
         cartTotal = document.querySelector('.card-table__total'),
@@ -239,18 +240,19 @@ const cart = () => {
     });
     // =====================================================
 
+    // Если на index.html, то используем блок parentNew иначе parentDIV 
+    const parent = window.location.pathname === '/goods.html' ? parentDiv : parentNew;
+
     // Добавить товар в корзину (если на страничке goods.html)
-    if (parentDiv) {
         // Нажатие на кнопку добавить в корзину
-        parentDiv.addEventListener('click', (e) => {
+        parent.addEventListener('click', (e) => {
             if (e.target.closest('.add-to-cart')) {
-                const toCartBtn = e.target.closest('.add-to-cart'),
-                    goodId = toCartBtn.dataset.id;
-                addToCard(goodId);
+                const toCartBtn = e.target.closest('.add-to-cart');
+                addToCard(toCartBtn.dataset.id);
             }
             cartItemsCount();
         });
-    }
+
     // =====================================================
 
     // Отправка данных о заказе товаров при нажатии на кнопку submit

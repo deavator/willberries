@@ -9,6 +9,7 @@ html {
 body {
     margin: 0;
     font-family: 'Lato', sans-serif;
+    background-color: #e5e2e2;
 }
 
 img {
@@ -36,6 +37,15 @@ img {
     font-size: 14px;
     line-height: 20px;
     letter-spacing: 0.5px;
+    transition: all .2s ease-in;
+}
+
+.search-icon {
+    padding-top: 10px;
+}
+
+.navigation-link:hover {
+    color: #5c5e61;
 }
 
 .hide {
@@ -65,6 +75,20 @@ button {
     line-height: 20px;
     display: flex;
     align-items: center;
+}
+
+.arrow-top {
+    position: fixed;
+    top: calc(50% - 40px);
+    right: 100px;
+    background-color: #bdbdbd;
+    border-radius: 50%;
+    color:#0000004d
+}
+
+.arrow-top:hover {
+    background-color: #969696;
+    cursor: pointer;
 }
 
 .button-icon,
@@ -99,6 +123,8 @@ button {
 
 .long-goods {
     display: none;
+    min-height: calc(100vh - 196px - 70px);
+    margin-bottom: 10px;
 }
 
 .show-goods .long-goods {
@@ -163,6 +189,8 @@ button {
     border: none;
     cursor: pointer;
 }
+
+
 
 .card {
     min-height: 370px;
@@ -275,6 +303,14 @@ button {
     text-align: center;
     padding: 30px 35px 35px;
     min-height: 440px;
+    background-color: #fff;
+    box-shadow: 0 10px 25px rgba(72, 72, 72, .1);
+    transition: all .2s ease-in;
+}
+
+.goods-card:hover {
+    box-shadow: 0 10px 25px #3030303d;
+    cursor: pointer;
 }
 
 .goods-card .label {
@@ -514,10 +550,9 @@ button {
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #939699;
+    color: #adb6bf;
     font-family: 'Lato', sans-serif;
     font-style: normal;
-    font-weight: 900;
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid #ced4da;
