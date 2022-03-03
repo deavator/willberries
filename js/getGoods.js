@@ -13,7 +13,7 @@ const getGoods = () => {
     // const url = '/db/db.json';
 
     //online mode
-    const url = 'https://willberries-bc782-default-rtdb.europe-west1.firebasedatabase.app/goods.json'; 
+    const url = 'https://willberries-bc782-default-rtdb.europe-west1.firebasedatabase.app/goods.json';
 
 
     // ======= ФУНКЦИИ ============================================
@@ -25,7 +25,7 @@ const getGoods = () => {
             .then((data) => {
                 // localStorage.setItem('goods', JSON.stringify(data.goods));
                 localStorage.setItem('goods', JSON.stringify(data));
-        });
+            });
     };
 
 
@@ -82,10 +82,10 @@ const getGoods = () => {
     const newArrivalGoods = () => {
         const goods = JSON.parse(localStorage.getItem('goods'));
         const filteredGoods = goods.filter(item => item.label === "New");
-        
+
         // Пересортировка массива новых товаров
         shuffle(filteredGoods);
-        
+
         // Отправка на рендер 4-х элементов массива новых товаров
         localStorage.setItem('goods', JSON.stringify(filteredGoods.slice(0, 4)));
         renderData(parentNew);
@@ -94,15 +94,17 @@ const getGoods = () => {
     // Пересортировка элементов массива случайным образом 
     // Для отображения товаров на главной странице
     function shuffle(array) {
-        let currentIndex = array.length,  randomIndex;
+        let currentIndex = array.length,
+            randomIndex;
         // While there remain elements to shuffle...
         while (currentIndex != 0) {
-          // Pick a remaining element...
-          randomIndex = Math.floor(Math.random() * currentIndex);
-          currentIndex--;
-          // And swap it with the current element.
-          [array[currentIndex], array[randomIndex]] = [
-            array[randomIndex], array[currentIndex]];
+            // Pick a remaining element...
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+            // And swap it with the current element.
+            [array[currentIndex], array[randomIndex]] = [
+                array[randomIndex], array[currentIndex]
+            ];
         }
         return array;
     }
@@ -141,6 +143,6 @@ const getGoods = () => {
         } else {
             scrollBtn.classList.add('hide');
         }
-      });
+    });
 };
 getGoods();
